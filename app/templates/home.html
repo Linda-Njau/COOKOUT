@@ -1,51 +1,83 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Home{% endblock %}
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-{% block styles %}
-<style>
-    .paper-style {
-        background-color: #f6f0e1;
-        border: 1px solid #d6c2a1;
-        padding: 20px;
-        width: 500px;
-        margin: 0 auto;
-        font-family: 'Old English Text MT', serif;
-        color: #3d2714;
-    }
-    
-    .paper-style label {
-        font-weight: bold;
-    }
-    
-    .paper-style textarea,
-    .paper-style input[type="text"],
-    .paper-style input[type="number"],
-    .paper-style input[type="checkbox"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    
-    .paper-style button[type="submit"] {
-        margin-top: 20px;
-    }
-</style>
-{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-{% block content %}
-<div class="container">
-    <h1 class="text-center">Add Recipe</h1>
-    <div class="paper-style">
-        <form method="POST">
-            <div class="form-group">
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" class="form-control">
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+                <a href="#"><i class="fas fa-utensils"></i>COOKOUT</a>
             </div>
-            <!-- Rest of the form fields -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Add Recipe</button>
-            </div>
-        </form>
-    </div>
-</div>
-{% endblock %}
+
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#speciality">About</a></li>
+                <li><a href="#popular">Popular</a></li>
+                <li><a href="#review">Contact</a></li>
+                <li><a href="#order" class="order">Menu</a></li>
+            </ul>
+        </section>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- hero section starts  -->
+
+    <section class="home" id="home ">
+        <div class="content">
+            <!-- Tagline -->
+            <h3 class="mainfont">
+                <span class="yellowColor"></span>
+            </h3>
+            <h3>
+                <span class="yellowColor"></span>
+                <span class="yellowColor"></span>
+            </h3>
+            <!--Description  -->
+            <p>
+                Hi, Welcome to COOKOUT!
+
+                Geeking out about food is all we are about. 
+                
+                Share recipes and see recipes, talk about food and please, 
+                
+                
+                feel at home!
+            </p>
+
+            <!-- CTA -->
+            
+        </div>
+        <!-- Hero image -->
+
+        <div class="image">
+            <img src="food.jpg " alt=" " />
+        </div>
+    </section>
+
+    <!-- hero section ends   -->
+</body>
+
+</html>
