@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,70 +13,32 @@
 </head>
 
 <body>
-    <!-- header section starts  -->
-
     <header>
         <section class="nav">
-            <!-- We can also insert any logo here     -->
-
-            <!-- We can also insert any logo here     -->
             <div class="logo">
                 <a href="#"><i class="fas fa-utensils"></i>COOKOUT</a>
             </div>
-
-            <!--  checkbox to control the icon's state    -->
             <input id="menu-toggle" type="checkbox" />
             <label class="menu-button-container" for="menu-toggle">
           <div class="menu-button"></div>
         </label>
-            <!--  main menu    -->
             <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#speciality">About</a></li>
-                <li><a href="#popular">Popular</a></li>
-                <li><a href="#review">Contact</a></li>
-                <li><a href="#order" class="order">Menu</a></li>
+                <li><a href="{{ url_for('views.home') }}">Home</a></li>
+                <li><a href="{{ url_for('views.about') }}">About</a></li>
+                <li><a class="nav-item nav-link" id="profile" href="{{ url_for('views.user', username=current_user.username) }}"> Profile
+                  </a></li>
             </ul>
         </section>
     </header>
-
-    <!-- header section ends -->
-
-    <!-- hero section starts  -->
-
     <section class="home" id="home ">
         <div class="content">
-            <!-- Tagline -->
-            <h3 class="mainfont">
-                <span class="yellowColor"></span>
-            </h3>
-            <h3>
-                <span class="yellowColor"></span>
-                <span class="yellowColor"></span>
-            </h3>
-            <!--Description  -->
             <p>
                 Hi, Welcome to COOKOUT!
 
                 Geeking out about food is all we are about. 
-                
-                Share recipes and see recipes, talk about food and please, 
-                
-                
-                feel at home!
-            </p>
-
-            <!-- CTA -->
-            
-        </div>
-        <!-- Hero image -->
-
-        <div class="image">
-            <img src="food.jpg " alt=" " />
+            </p>   
         </div>
     </section>
-
-    <!-- hero section ends   -->
-</body>
+    </body>
 
 </html>

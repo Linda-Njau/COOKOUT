@@ -7,6 +7,14 @@ from flask_wtf import csrf
 
 views = Blueprint('views', __name__)
 
+@views.route('/about')
+def about():
+    return render_template('about.html')
+
+@views.route('/home')
+def home():
+    return render_template('home.html')
+
 @views.route('/user/<username>')
 @login_required
 def user(username):
@@ -14,9 +22,9 @@ def user(username):
     recipes = Recipe.query.filter_by(user_id=user.id).all()
     return render_template('user.html', user=user, recipes=recipes)
 
-@views.route('/', methods=['GET', 'POST'])
+@views.route('/recipe', methods=['GET', 'POST'])
 @login_required
-def home():
+def recipe():
     """returns home page"""
     if request.method == 'POST':
         title = request.form.get('title')

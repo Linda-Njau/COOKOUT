@@ -48,17 +48,13 @@
     .logo {
         font-size: 2.5rem;
         font-weight: bolder;
-        color: #666;
+        color: white;
         display: inline-block;
     }
     
     .logo i {
         padding-right: 2rem;
-        color: black;
-    }
-    
-    .order {
-        text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px yellow;
+        color: white;
     }
     
     .nav {
@@ -66,8 +62,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        background: white;
-        color: black;
+        background: rgb(15, 15, 15);
+        color: whitesmoke;
         height: 65px;
         padding: 1em;
         font-size: 25px;
@@ -109,7 +105,7 @@
     .menu-button::before,
     .menu-button::after {
         display: block;
-        background-color: black;
+        background-color: white;
         position: absolute;
         height: 6px;
         width: 32px;
@@ -153,8 +149,8 @@
     }
     
     .home .content {
-        flex: 1 1 40rem;
-        padding-top: 6.5rem;
+        flex: 3 3 80rem;
+        padding-top: 20.20rem;
     }
     /* Styling the main image */
     
@@ -179,33 +175,19 @@
             transform: translateY(3rem);
         }
     }
-   
-    .home .content h3 {
-        font-size: 5rem;
-        color: white;
-    }
-    /* Styling the content */
-    
-    .yellowColor {
-        color: yellow;
-    }
     
     .mainfont {
         font-family: "Jacques Francois Shadow", cursive;
     }
     
     .home .content p {
-        font-size: 1.7rem;
+        font-size: 3rem;
         color: white;
         padding: 1rem 0;
+        align-content: center;
+        text-shadow: 2px 4px 4px black;
     }
     
-    .heading {
-        text-align: center;
-        font-size: 3.5rem;
-        padding: 1rem;
-        color: #666;
-    }
     /* Styling the buttons  */
     
     .btn {
@@ -279,14 +261,5 @@
         }
         .menu>li:not(:last-child) {
             border-bottom: 1px solid #444;
-        }
-    }
-    
-    @media (max-width: 450px) {
-        html {
-            font-size: 50%;
-            overflow-x: hidden;
-            overflow-y: scroll;
-            text-align: center;
         }
     }

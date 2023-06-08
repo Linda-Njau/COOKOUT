@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+<body>
+    <header>
+        <section class="nav">
+            <div class="logo">
+                <a href="#"><i class="fas fa-utensils"></i>COOKOUT</a>
+            </div>
+            <input id="menu-toggle" type="checkbox">
+            <label class="menu-button-container" for="menu-toggle"/>
+          <div class="menu-button"></div>
+        </label>
+            <ul class="menu">
+              <li><a href="{{ url_for('views.home') }}">Home</a></li>
+                <li><a href="{{ url_for('views.about') }}">About</a></li>
+                <li><a class="nav-item nav-link" id="profile" href="{{ url_for('views.user', username=current_user.username) }}">Profile</a></li>
+            </ul>
+        </section>
+      </header>
+            <div class="about-section">
+                <h1>About Us Page</h1>
+                <p>Some text about who we are and what we do.</p>
+                <p>Resize the browser window to see that this page is responsive by the way.</p>
+              </div>
+              
+              <h2 style="text-align:center">Our Team</h2>
+              <div class="row">
+                <div class="column">
+                  <div class="card">
+                    <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+                    <div class="container">
+                      <h2>Jane Doe</h2>
+                      <p class="title">CEO & Founder</p>
+                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                      <p>jane@example.com</p>
+                      <p><button class="button">Contact</button></p>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="column">
+                  <div class="card">
+                    <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+                    <div class="container">
+                      <h2>Mike Ross</h2>
+                      <p class="title">Art Director</p>
+                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                      <p>mike@example.com</p>
+                      <p><button class="button">Contact</button></p>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="column">
+                  <div class="card">
+                    <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+                    <div class="container">
+                      <h2>John Doe</h2>
+                      <p class="title">Designer</p>
+                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                      <p>john@example.com</p>
+                      <p><button class="button">Contact</button></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</body>
+</html>
