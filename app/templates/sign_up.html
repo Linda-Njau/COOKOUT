@@ -1,48 +1,104 @@
-{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block content%}
-<form method="POST">
-   <h3 align="center">Sign Up</h3>
-   <div class="form-group">
-     <label for="email">Email Address</label>
-     <input
-       type="email"
-       class="form-control"
-       id="email"
-       name="email"
-       placeholder="Enter Email"
-     />
-    </div>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        class="form-control"
-        id="username"
-        name="username"
-        placeholder="Enter username"
-     />
-    </div>
-    <div class="form-group">
-      <label for="password1">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password1"
-        name="password1"
-        placeholder="Enter password"
-     />
-    </div>
-    <div class="form-group">
-      <label for="password2">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password2"
-        name="password2"
-        placeholder="Confirm password"
-     />
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-{% endblock %}
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./static/cookout.png" alt="simply recipes" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
+          <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
+
+          <div class="nav-link contact-link">
+            <a href="contact.html" class="btn"> login </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+    <main class="page">
+      <br>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+     <section class="contact-container">
+          <article class="contact-info">
+            <h3>Welcome to Cookout</h3>
+            <p>
+              Join our thriving community of food enthusiasts and embark on a culinary adventure like no other. 
+              Discover a world of delicious recipes, connect with fellow foodies, and share your own culinary creations. 
+              Sign up now and become part of the Cookout family. Let's cook, share, and savor together!
+            </p>
+          </article>
+          <article>
+            <form class="form contact-form" method="POST" action="{{ url_for('auth.signup') }}">           
+              <div class="form-row">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" id="username" class="form-input" />
+              </div>
+              <div class="form-row">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" name="email" id="email" class="form-input" />
+              </div>
+              <div class="form-row">
+                <label for="password1" class="form-label">Enter password</label>
+                <input type="password" name="password1" id="password1" class="form-input" />
+              </div>
+              <div class="form-row">
+                <label for="password2" class="form-label">Confirm password</label>
+                <input type="password2" name="password2" id="password2" class="form-input" />
+              </div>
+              <button type="submit" class="btn btn-block">
+                submit
+              </button>
+            </form>
+          </article>
+        </section>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+        &copy; <span id="date"></span>
+        <span class="footer-logo">Cookout</span> Built by
+        <a href="https://github.com/Linda-Njau">Linda Njau</a>
+      </p>
+    </footer>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

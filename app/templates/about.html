@@ -1,79 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>About || Final</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./static/cookout.png" alt="simply recipes" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
+          <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
+          <a href="tags.html" class="nav-link"> tags </a>
+          <a href="recipes.html" class="nav-link"> recipes </a>
 
-</head>
-
-<body>
-    <header>
-        <section class="nav">
-            <div class="logo">
-                <a href="#"><i class="fas fa-utensils"></i>COOKOUT</a>
-            </div>
-            <input id="menu-toggle" type="checkbox">
-            <label class="menu-button-container" for="menu-toggle"/>
-          <div class="menu-button"></div>
-        </label>
-            <ul class="menu">
-              <li><a href="{{ url_for('views.home') }}">Home</a></li>
-                <li><a href="{{ url_for('views.about') }}">About</a></li>
-                <li><a class="nav-item nav-link" id="profile" href="{{ url_for('views.user', username=current_user.username) }}">Profile</a></li>
-            </ul>
-        </section>
-      </header>
-            <div class="about-section">
-                <h1>About Us Page</h1>
-                <p>Some text about who we are and what we do.</p>
-                <p>Resize the browser window to see that this page is responsive by the way.</p>
-              </div>
-              
-              <h2 style="text-align:center">Our Team</h2>
-              <div class="row">
-                <div class="column">
-                  <div class="card">
-                    <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-                    <div class="container">
-                      <h2>Jane Doe</h2>
-                      <p class="title">CEO & Founder</p>
-                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                      <p>jane@example.com</p>
-                      <p><button class="button">Contact</button></p>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="column">
-                  <div class="card">
-                    <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
-                    <div class="container">
-                      <h2>Mike Ross</h2>
-                      <p class="title">Art Director</p>
-                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                      <p>mike@example.com</p>
-                      <p><button class="button">Contact</button></p>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="column">
-                  <div class="card">
-                    <img src="/w3images/team3.jpg" alt="John" style="width:100%">
-                    <div class="container">
-                      <h2>John Doe</h2>
-                      <p class="title">Designer</p>
-                      <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                      <p>john@example.com</p>
-                      <p><button class="button">Contact</button></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-</body>
+          <div class="nav-link contact-link">
+            <a href="{{ url_for('auth.signup')}}" class="btn"> Join Us </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+    <main class="page">
+      <section class="about-page">
+        <article>
+          <h2>Welcome to Cookout- Where Flavors Unite!</h2>
+          <p>
+            At Cookout, we believe that food brings people together.
+             We are a community-driven platform dedicated to sharing delicious recipes, culinary inspiration,
+              and the joy of cooking. Whether you're a professional chef, a passionate home cook,
+               or just someone who loves exploring new flavors, Cookout is the perfect place to connect, share,
+                and discover amazing recipes from around the world.
+          </p>
+          <p>
+            Come Hungry, Come Curious!
+          </p>
+          <a href="contact.html" class="btn"> Join Us </a>
+        </article>
+        <!-- needs fixes -->
+        <img
+          src="./static/food.jpg"
+          alt="Person Pouring Salt in Bowl"
+          class="img about-img"
+        />
+      </section>
+      <section class="featured-recipes">
+        <h5 class="featured-title">What makes Cookout different...?</h5>
+        <div class="recipes-list">
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/community.jpg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Thriving Food Community</h5>
+            <p> Cookout thrives on a vibrant community of food enthusiasts who connect, 
+              share, and learn from each other.</p>
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/cuisine.jpg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Culinary Diveristy</h5>
+            <p>Explore a wide array of recipes from around the world, 
+              satisfying diverse tastes and dietary preferences.</p>
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/profile.jpg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Personalized Experience</h5>
+            <p>Customize your profile, share your cooking journey, 
+              and engage with others in a supportive and interactive environment.</p>
+          </a>
+          <!-- end of single recipe -->
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+        &copy; <span id="date"></span>
+        <span class="footer-logo">Cookout</span> Built by
+        <a href="https://github.com/Linda-Njau">Linda Njau</a>
+      </p>
+    </footer>
+    <script src="./js/app.js"></script>
+  </body>
 </html>
