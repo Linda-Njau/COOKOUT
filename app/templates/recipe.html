@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='recipe.css') }}" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./static/cookout.png" alt="simply recipes" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
+          <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
+          <a href="{{ url_for('views.home') }}" class="nav-link"> my recipes </a>
+
+          <div class="nav-link contact-link">
+            <a href="{{ url_for('auth.logout') }}"class="btn"> logout </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="page">
+    <section class="contact-container">
+      <h3>Some inspo for you...</h3>
+      <br>
+      <article>
+        <div class="recipes-list">
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/recipe-4.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Pancakes</h5>
+            <p>The perfect breakfast, how do you make your pancakes?</p>
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/eggs.jpg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5> Fried Eggs</h5>
+            <p>do you like your eggs runny or well-done, tell us, we dont bite</p>
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/stew.jpg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Stew</h5>
+            <p>when you need that heart warming stew, what's your go to recipe?</p>
+          </a>
+          <br>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="./static/recipe-3.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Soup</h5>
+            <p>All your cold hands want is a warm bowl of soup, let us hear all about it</p>
+          </a>
+          <!-- end of single recipe -->
+        </div>
+      </article>
+      <article class="contact-info">
+        <h3>Wondering what recipe to create..?</h3>
+        <p>
+          Don't be shy to unleash your inner recipe creator on the fantastic app Cookout. 
+          It's time to dive into a world of fun and engaging culinary adventures, 
+          where your imagination takes center stage. Embrace the joy of experimenting with flavors,
+           textures, and ingredients as you embark on a culinary journey like no other. Cookout encourages 
+           you to be bold, innovative, and unafraid to think outside the box. Whether you're a seasoned cook 
+           or just starting out, this vibrant community welcomes you with open arms
+        </p>
+        <br>
+        <p>
+          Share your unique recipes, swap cooking tips, and engage in delightful conversations with fellow food enthusiasts 
+          from all corners of the globe. Let your creativity flourish, and with each creation, 
+          remember that the heart and soul you put into your recipes are what truly make them extraordinary.
+           So, let the flavors collide, the laughter fill the air, and the magic unfold as you join the 
+           vibrant Cookout community and create culinary masterpieces that will ignite taste buds and inspire 
+           others to follow their own delicious dreams.
+           </p>
+      </article>
+      <article class="recipe-class">
+    <h3>Are you ready to create your own Recipe...</h3>
+    <form class="recipe-create contact-form" method="POST" action="{{url_for('views.recipe') }}">
+      <div class="form-row">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" name="title" id="title" required>
+        <div>
+          <div class="form-row">
+        <label for="ingredients" class="form-label">Ingredients:</label>
+        <input type="text" name="ingredients" id="ingredients" class="recipe-input" />
+          </div>
+          <div class="form-row">
+        <label for="instructions" class="form-label">Instructions:</label>
+        <input type="text" name="instructions" id="instructions" class="recipe-input"  ></textarea>
+          </div>
+          <div class="form-row">
+        <label for="preparation_time" class="form-label" >Preparation Time:</label>
+        <input type="text" name="preparation_time" id="preparation_time">
+          </div>
+          <div class="form-row">
+        <label for="cooking_time"class="form-label" >Cooking Time:</label>
+        <input type="text" name="cooking_time" id="cooking_time" >
+          </div>
+          <div class="form-row">
+        <label for="calories" class="form-label" >Calories:</label>
+        <input type="text" name="calories" id="calories">
+          </div>
+          <div class="form-row">
+        <label for="servings" class="form-label" >Servings:</label>
+        <input type="text" name="servings" id="servings">
+          </div>
+          <div class="form-row">
+        <label for="hidden">Hidden:</label>
+        <input type="checkbox" name="hidden" id="hidden">
+          </div>
+         <button type="submit" class="btn btn-block">
+                Create Recipe
+              </button> 
+    </form>
+  </section>
+  </article>
+</html>

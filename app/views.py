@@ -34,7 +34,7 @@ def recipe():
         cooking_time = request.form.get('cooking_time')
         calories = request.form.get('calories')
         servings = request.form.get('servings')
-        hidden = (request.form.get('hidden'))
+        hidden = bool(request.form.get('hidden'))
         collection_id = (request.form.get('collection_id'))
         
         if len(title) < 1:
@@ -55,7 +55,7 @@ def recipe():
             db.session.add(new_recipe)
             db.session.commit()
             flash('Your recipe is added!', category='success')
-    return render_template("home.html", user=current_user)
+    return render_template("recipe.html", user=current_user)
 
 @views.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
@@ -68,7 +68,7 @@ def edit_profile():
         db.session.commit()
         flash('Profile updated successfully', category='success')
         return redirect(url_for('views.edit_profile'))
-    return render_template('edit_profile.html', user=current_user, csrf_token=csrf.generate_csrf())
+    return render_template('recipe.html', user=current_user, csrf_token=csrf.generate_csrf())
 
 @views.route('/delete-recipe', methods=['POST'])
 def delete_recipe():

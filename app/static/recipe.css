@@ -1,0 +1,22 @@
+.contact-container {
+  background: url('/static/burger.jpg') center/cover no-repeat;
+}
+
+.recipe-class {
+  width: 100%;
+  max-width: var(--fixed-width);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  margin: 3rem auto;
+}
+
+.recipe-input,
+.form-textarea {
+  width: 70%;
+  padding: 10rem 10rem;
+  border-radius: black;
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+  overflow: hidden;
+}

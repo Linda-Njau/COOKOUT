@@ -32,11 +32,10 @@
         <div class="nav-links">
           <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
           <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
-          
           <a href= "{{ url_for('views.recipe') }}" class="nav-link"> recipes </a>
 
           <div class="nav-link contact-link">
-            <a href="contact.html" class="btn"> Join Us </a>
+            <a href= "{{url_for('auth.signup') }}" class="btn"> Join Us </a>
           </div>
         </div>
       </div>
@@ -49,7 +48,7 @@
         <div class="hero-container">
           <div class="hero-text">
             <h1>COOKOUT</h1>
-            <h4>"Come Hungry, Come Curious: Cookout, Where Flavors Dance!"</h4>
+            <h4>"Come Hungry, Come Curious: Cookout, Where Flavors Unite!"</h4>
           </div>
         </div>
       </header>
