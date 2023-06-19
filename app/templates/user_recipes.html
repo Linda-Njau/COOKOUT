@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='recipe.css') }}" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://fontawesome.com/icons/utensils?f=classic&s=solid"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./static/cookoutbrown.png" alt="simply recipes" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
+          <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
+          <a href="{{ url_for('views.home') }}" class="nav-link"> my recipes </a>
+
+          <div class="nav-link contact-link">
+            <a href="{{ url_for('auth.logout') }}"class="btn"> logout </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="page">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+      <ul>
+        {% for recipe in recipes %}
+        <li>
+          <article class="recipe-info"> 
+          <h2>{{ recipe.title }}</h2>
+            <article>
+              <h4>Ingredients:<h4>
+          <p>{{ recipe.ingredients }}</p>
+                <h4>Instructions:<h4>
+          <p>{{ recipe.instructions }}</p>
+          <div class="recipe-icons">
+            <article>
+              <i class="fas fa-clock"></i>
+              <h5>prep time</h5>
+          <p>{{ recipe.preparation_time }} minutes</p>
+            </article>
+            <article>
+              <i class="far fa-clock"></i>
+              <h5>cook time</h5>
+          <p>{{ recipe.cooking_time }} minutes</p>
+            </article>
+          <article>
+            <i class="fas fa-user-friends"></i>
+            <h5>serving</h5>
+          <p>{{ recipe.servings }} servings</p>
+          <br>
+          <form action="/delete-recipe" method="post">
+            <input type="hidden" name="recipeId" value="{{ recipe.id }}">
+          <button type="submit" class="btn btn-block">
+            Delete
+          </button>
+        </form>
+      </li>
+        {% endfor %}
+    </ul>
+    <script>
+      window.onscroll = function() {scrollFunction()};
+  
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.querySelector(".navbar").classList.add("sticky");
+        } else {
+          document.querySelector(".navbar").classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+  </html>

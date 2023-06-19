@@ -1,3 +1,4 @@
+from unicodedata import category
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Recipe, User
@@ -25,7 +26,7 @@ def user(username):
 @views.route('/recipe', methods=['GET', 'POST'])
 @login_required
 def recipe():
-    """returns home page"""
+    """returns recipe creation page"""
     if request.method == 'POST':
         title = request.form.get('title')
         ingredients = request.form.get('ingredients')
@@ -57,6 +58,14 @@ def recipe():
             flash('Your recipe is added!', category='success')
     return render_template("recipe.html", user=current_user)
 
+@views.route('/user_recipes')
+def display_recipes():
+    if current_user.is_authenticated:
+        recipes = Recipe.query.filter_by(user_id=current_user.id).all()
+        return render_template('user_recipes.html', recipes=recipes)
+    else:
+        return "Please log in to view recipes."
+
 @views.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
@@ -72,15 +81,14 @@ def edit_profile():
 
 @views.route('/delete-recipe', methods=['POST'])
 def delete_recipe():
-    recipe = json.loads(request.data)
-    recipeId = recipe['recipeId']
-    recipe = Recipe.query.get(recipeId)
-    if recipe:
-        if recipe.user_id == current_user.id:
-            db.session.delete(recipe)
-            db.session.commit()
+    recipe_id = request.form.get('recipeId')
+    recipe = Recipe.query.get(recipe_id)
     
-    return jsonify({})
+    if recipe and recipe.user_id == current_user.id:
+        db.session.delete(recipe)
+        db.session.commit()
+    flash('Recipe deleted successfully.', category='success')
+    return redirect(url_for('views.display_recipes'))
 
 @views.route('/follow/<username>', methods=['POST'])
 @login_required

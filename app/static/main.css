@@ -136,7 +136,7 @@ ul {
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--primary-500);
+  background: blue;
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -264,9 +264,11 @@ Navbar
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgb(80, 200, 120);
+  color: var(--grey-100);
 }
 .nav-center {
-  width: 90vw;
+  width: 100vw;
   max-width: var(--max-width);
 }
 .nav-header {
@@ -315,6 +317,13 @@ Navbar
   color: var(--primary-500);
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 .contact-link a {
   padding: 0.15rem 1rem;
 }
@@ -360,12 +369,13 @@ Page
 */
 
 .page {
-  width: 90vw;
+  width: 100%
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
 .page {
-  padding-top: 2rem;
+  padding-top: 0rem;
   min-height: calc(100vh - (6rem + 4rem));
 }
 /*
@@ -404,7 +414,6 @@ Hero
   height: 100vh;
   position: relative;
   margin-bottom: 2rem;
-  background: url('/static/peoplecooking.jpg') center/cover no-repeat;
   border-radius: 1px;
   margin: 0;
 }
@@ -417,11 +426,12 @@ Hero
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
   border-radius: var(--borderRadius);
 }
 .hero-text {
-  color: var(--white);
+  color: black;
+  font-weight: 400;
+  text-shadow: white-space;
   text-align: center;
 }
 
@@ -648,8 +658,12 @@ Recipe Template
 .recipe-hero {
   display: grid;
   gap: 3rem;
+  
 }
-
+.recipe-info {
+  background:url('/static/foodborder.jpg') center/cover no-repeat;
+  background-color: #0f5132;
+}
 .recipe-hero-img {
   height: 300px;
   border-radius: var(--borderRadius);
