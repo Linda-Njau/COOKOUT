@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe</title>
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='images/cookout2.png') }}" type="image/x-icon" />
     <!-- normalize -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='recipe.css') }}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/recipe.css') }}" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/normalize.css') }}" />
     <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
     <!-- main css -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css')}}" />
   </head>
   <body>
     <!-- nav  -->
@@ -25,7 +25,7 @@
       <div class="nav-center">
         <div class="nav-header">
           <a href="index.html" class="nav-logo">
-            <img src="./static/cookoutbrown.png" alt="simply recipes" />
+            <img src="./static/images/cookoutbrown.png" alt="cookout" />
           </a>
           <button class="nav-btn btn">
             <i class="fas fa-align-justify"></i>
@@ -34,7 +34,8 @@
         <div class="nav-links">
           <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
           <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
-          <a href="{{ url_for('views.display_recipes') }}" class="nav-link"> my recipes </a>
+          <a href= "{{ url_for('views.user_recipes') }}" class="nav-link">  My recipes </a>
+          <a href= "{{ url_for('views.recipe') }}" class="nav-link">  New recipe </a>
 
           <div class="nav-link contact-link">
             <a href="{{ url_for('auth.logout') }}"class="btn"> logout </a>
@@ -51,7 +52,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/recipe-4.jpeg"
+              src="./static/images/recipe-4.jpeg"
               class="img recipe-img"
               alt=""
             />
@@ -62,7 +63,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/eggs.jpg"
+              src="./static/images/eggs.jpg"
               class="img recipe-img"
               alt=""
             />
@@ -73,7 +74,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/stew.jpg"
+              src="./static/images/stew.jpg"
               class="img recipe-img"
               alt=""
             />
@@ -85,7 +86,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/recipe-3.jpeg"
+              src="./static/images/recipe-3.jpeg"
               class="img recipe-img"
               alt=""
             />
@@ -128,11 +129,11 @@
           </div>
           <div class="form-row">
         <label for="instructions" class="form-label">Instructions:</label>
-        <input type="text" name="instructions" id="instructions" class="recipe-input"  ></textarea>
+        <input type="text" name="instructions" id="instructions" style="height:200px" />
           </div>
           <div class="form-row">
         <label for="preparation_time" class="form-label" >Preparation Time:</label>
-        <input type="text" name="preparation_time" id="preparation_time">
+        <input type="text" name="preparation_time" id="preparation_time" >
           </div>
           <div class="form-row">
         <label for="cooking_time"class="form-label" >Cooking Time:</label>
@@ -156,4 +157,12 @@
     </form>
   </section>
   </article>
+</body>
+<footer class="page-footer">
+  <p>
+    &copy; <span id="date"></span>
+    <span class="footer-logo">Cookout</span> Built by
+    <a href="https://github.com/Linda-Njau">Linda Njau</a>
+  </p>
+</footer>
 </html>

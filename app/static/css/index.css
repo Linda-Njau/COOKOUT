@@ -1,0 +1,6 @@
+.page {
+    width: 100%
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: url('/static/images/peoplecooking.jpg') center/cover no-repeat;
+  }

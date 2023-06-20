@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='images/cookout2.png') }}" type="image/x-icon" />
     <!-- normalize -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/normalize.css') }}" />
     <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
     <!-- main css -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css')}}" />
   </head>
   <body>
     <!-- nav  -->
@@ -23,7 +23,7 @@
       <div class="nav-center">
         <div class="nav-header">
           <a href="index.html" class="nav-logo">
-            <img src="./static/cookoutbrown.png" alt="simply recipes" />
+            <img src="./static/images/cookoutbrown.png" alt="cookout" />
           </a>
           <button class="nav-btn btn">
             <i class="fas fa-align-justify"></i>
@@ -32,8 +32,8 @@
         <div class="nav-links">
           <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
           <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
-          <a href="tags.html" class="nav-link"> tags </a>
-          <a href="recipes.html" class="nav-link"> recipes </a>
+          <a href= "{{ url_for('views.user_recipes') }}" class="nav-link">  My recipes </a>
+          <a href= "{{ url_for('views.recipe') }}" class="nav-link">  New recipe </a>
 
           <div class="nav-link contact-link">
             <a href="{{ url_for('auth.signup')}}" class="btn"> Join Us </a>
@@ -58,9 +58,9 @@
           </p>
           <a href="{{url_for('auth.signup')}}" class="btn"> Join Us </a>
         </article>
-        <!-- needs fixes -->
+
         <img
-          src="./static/food.jpg"
+          src="./static/images/food.jpg"
           alt="Person Pouring Salt in Bowl"
           class="img about-img"
         />
@@ -71,7 +71,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/community.jpg"
+              src="./static/images/community.jpg"
               class="img recipe-img"
               alt=""
             />
@@ -83,7 +83,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/cuisine.jpg"
+              src="./static/images/cuisine.jpg"
               class="img recipe-img"
               alt=""
             />
@@ -95,7 +95,7 @@
           <!-- single recipe -->
           <a href="single-recipe.html" class="recipe">
             <img
-              src="./static/profile.jpg"
+              src="./static/images/profile.jpg"
               class="img recipe-img"
               alt=""
             />
@@ -115,6 +115,5 @@
         <a href="https://github.com/Linda-Njau">Linda Njau</a>
       </p>
     </footer>
-    <script src="./js/app.js"></script>
   </body>
 </html>

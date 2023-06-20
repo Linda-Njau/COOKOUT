@@ -59,12 +59,13 @@ def recipe():
     return render_template("recipe.html", user=current_user)
 
 @views.route('/user_recipes')
-def display_recipes():
+@login_required
+def user_recipes():
     if current_user.is_authenticated:
         recipes = Recipe.query.filter_by(user_id=current_user.id).all()
         return render_template('user_recipes.html', recipes=recipes)
     else:
-        return "Please log in to view recipes."
+        return redirect(url_for('auth.signup'))
 
 @views.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
@@ -88,7 +89,7 @@ def delete_recipe():
         db.session.delete(recipe)
         db.session.commit()
     flash('Recipe deleted successfully.', category='success')
-    return redirect(url_for('views.display_recipes'))
+    return redirect(url_for('views.user_recipes'))
 
 @views.route('/follow/<username>', methods=['POST'])
 @login_required

@@ -6,30 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe</title>
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{ url_for ('static', filename='cookout2.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='images/cookout2.png') }}" type="image/x-icon" />
     <!-- normalize -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='recipe.css') }}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/recipe.css') }}" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/normalize.css') }}" />
     <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <link
-    rel="stylesheet"
-    href="https://fontawesome.com/icons/utensils?f=classic&s=solid"
-    />
     <!-- main css -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='main.css')}}" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css')}}" />
   </head>
-  <body>
+  <body{% if recipes %}{% else %} class="no-recipes"{% endif %} >
     <!-- nav  -->
     <nav class="navbar">
       <div class="nav-center">
         <div class="nav-header">
           <a href="index.html" class="nav-logo">
-            <img src="./static/cookoutbrown.png" alt="simply recipes" />
+            <img src="./static/images/cookoutbrown.png" alt="cookout" />
           </a>
           <button class="nav-btn btn">
             <i class="fas fa-align-justify"></i>
@@ -38,7 +34,8 @@
         <div class="nav-links">
           <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
           <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
-          <a href="{{ url_for('views.home') }}" class="nav-link"> my recipes </a>
+          <a href= "{{ url_for('views.user_recipes') }}" class="nav-link">  My recipes </a>
+          <a href= "{{ url_for('views.recipe') }}" class="nav-link">  New recipe </a>
 
           <div class="nav-link contact-link">
             <a href="{{ url_for('auth.logout') }}"class="btn"> logout </a>
@@ -58,6 +55,7 @@
           {{ message }}
         </div>
         {% endif %} {% endfor %} {% endif %} {% endwith %}
+        {% if recipes %}
       <ul>
         {% for recipe in recipes %}
         <li>
@@ -93,6 +91,13 @@
       </li>
         {% endfor %}
     </ul>
+    {% else %}
+    <div class="no-recipe-message">
+      <h4>You don't have any recipes yet.<h4>
+        <p> Start creating your first recipe now!</p>
+        <a href="{{ url_for('views.recipe') }}" class="btn">Create Recipe</a>
+      </div>
+      {% endif %}
     <script>
       window.onscroll = function() {scrollFunction()};
   
