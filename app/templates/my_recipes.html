@@ -60,16 +60,5 @@
         <p> Start creating your first recipe now!</p>
         <a href="{{ url_for('views.recipe') }}" class="btn">Create Recipe</a>
       </div>
-      {% endif %}
-    <script>
-      window.onscroll = function() {scrollFunction()};
-  
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.querySelector(".navbar").classList.add("sticky");
-        } else {
-          document.querySelector(".navbar").classList.remove("sticky");
-        }
-      }
-    </script>
+      {% endif %} 
     {% endblock %}

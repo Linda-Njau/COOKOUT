@@ -53,5 +53,16 @@
         </p>
       </footer>
     </body>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.querySelector(".navbar").classList.add("sticky");
+          } else {
+            document.querySelector(".navbar").classList.remove("sticky");
+          }
+        }
+      </script>
   </html>
   

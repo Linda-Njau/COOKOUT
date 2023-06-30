@@ -10,6 +10,7 @@ migrate = Migrate()
 DB_NAME = "database.db"
 
 def create_app():
+    """Create a new flask application"""
     app = Flask(__name__)
     app.config.from_object(Config)
     db.init_app(app)

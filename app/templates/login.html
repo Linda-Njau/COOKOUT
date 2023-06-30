@@ -52,22 +52,22 @@
           {{ message }}
         </div>
         {% endif %} {% endfor %} {% endif %} {% endwith %}
-     <section class="contact-container">
+     <section class="new-recipe-container">
         <div>
-            <a href="single-recipe.html" class="recipe">
+            <div class="image-info">
               <img
                 src="./static/images/community.jpg"
-                class="img recipe-img"
+                class="img info-img"
                 alt=""
               />
-            </a>
+            </div>
             <h3>Welcome  back to Cookout!</h3>
             <p>
                 we missed you.
             </p>
         </div>
           
-            <form class="form contact-form" method="POST" action="{{ url_for('auth.login') }}">
+            <form class="recipe-create recipe-form" method="POST" action="{{ url_for('auth.login') }}">
               <div class="form-row">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" name="email" id="email" class="form-input" />

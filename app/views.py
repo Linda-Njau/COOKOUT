@@ -10,15 +10,18 @@ views = Blueprint('views', __name__)
 
 @views.route('/about')
 def about():
+    """Returns about page"""
     return render_template('about.html')
 
 @views.route('/')
 def home():
+    """Returns home page"""
     return render_template('index.html')
 
 @views.route('/user/<username>')
 @login_required
 def user(username):
+    """Returns user"""
     user = User.query.filter_by(username=username).first_or_404()
     recipes = Recipe.query.filter_by(user_id=user.id).all()
     return render_template('user.html', user=user, recipes=recipes)
@@ -61,6 +64,7 @@ def new_recipe():
 @views.route('/my_recipes')
 @login_required
 def my_recipes():
+    """displays a users recipes"""
     if current_user.is_authenticated:
         recipes = Recipe.query.filter_by(user_id=current_user.id).all()
         return render_template('my_recipes.html', recipes=recipes)
@@ -70,6 +74,7 @@ def my_recipes():
 @views.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
+    """allows user to edit profile"""
     if request.method == 'POST':
         username = request.form.get('username')
         email = request.form.get('email')
@@ -82,6 +87,7 @@ def edit_profile():
 
 @views.route('/delete-recipe', methods=['POST'])
 def delete_recipe():
+    """Deletes a user's recipe"""
     recipe_id = request.form.get('recipeId')
     recipe = Recipe.query.get(recipe_id)
     
@@ -94,6 +100,7 @@ def delete_recipe():
 @views.route('/follow/<username>', methods=['POST'])
 @login_required
 def follow(username):
+    """Follow functionality for the user"""
     user = User.query.filter_by(username=username).first()
     if user is None:
         flash('User {} not found'.format(username), category='error')
@@ -109,6 +116,7 @@ def follow(username):
 @views.route('/unfollow/<username>', methods=['POST'])
 @login_required
 def unfollow(username):
+    """unfollow functionality for the user"""
     user = User.query.filter_by(username=username).first()
     if user is None:
         flash('User {} not found'.format(username), category='error')

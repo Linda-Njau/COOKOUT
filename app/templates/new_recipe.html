@@ -7,60 +7,61 @@
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for ('static', filename='css/new_recipe.css')}}" />
     <main class="page">
-    <section class="contact-container">
+    <section class="new-recipe-container">
       <h3>Some inspo for you...</h3>
       <br>
       <article>
-        <div class="recipes-list">
+        <div class="image-info-list">
           <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
+          <div class="image-info">
             <img
               src="./static/images/recipe-4.jpeg"
-              class="img recipe-img"
+              class="img info-img"
               alt=""
             />
             <h5>Pancakes</h5>
             <p>The perfect breakfast, how do you make your pancakes?</p>
-          </a>
+          </div>
           <!-- end of single recipe -->
           <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
+          <div class="image-info">
             <img
               src="./static/images/eggs.jpg"
-              class="img recipe-img"
+              class="img info-img"
               alt=""
             />
             <h5> Fried Eggs</h5>
             <p>do you like your eggs runny or well-done, tell us, we dont bite</p>
-          </a>
+          </div>
           <!-- end of single recipe -->
           <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
+          <div class="image-info">
             <img
               src="./static/images/stew.jpg"
-              class="img recipe-img"
+              class="img info-img"
               alt=""
             />
             <h5>Stew</h5>
             <p>when you need that heart warming stew, what's your go to recipe?</p>
-          </a>
+          </div>
           <br>
           <!-- end of single recipe -->
           <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
+          <div class="image-info">
             <img
               src="./static/images/recipe-3.jpeg"
-              class="img recipe-img"
+              class="img info-img"
               alt=""
             />
             <h5>Soup</h5>
             <p>All your cold hands want is a warm bowl of soup, let us hear all about it</p>
-          </a>
+          </div>
           <!-- end of single recipe -->
         </div>
       </article>
-      <article class="contact-info">
+      <article class="new-recipe-info">
         <h3>Wondering what recipe to create..?</h3>
         <p>
           Don't be shy to unleash your inner recipe creator on the fantastic app Cookout. 
@@ -82,7 +83,7 @@
       </article>
       <article class="recipe-class">
     <h3>Are you ready to create your own Recipe...</h3>
-    <form class="recipe-create contact-form" method="POST" action="{{url_for('views.new_recipe') }}">
+    <form class="recipe-create recipe-form" method="POST" action="{{url_for('views.new_recipe') }}">
       <div class="form-row">
         <label for="title" class="form-label">Title:</label>
         <input type="text" name="title" id="title" required>
