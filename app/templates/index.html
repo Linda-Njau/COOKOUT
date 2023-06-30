@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COOKOUT</title>
-    <link rel="shortcut icon" href="{{ url_for ('static', filename='images/cookout2.png') }}" type="image/x-icon" />
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/normalize.css') }}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/index.css')}}" />
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css')}}" />
-  </head>
-  <body>
-    <!-- nav  -->
-    <nav class="navbar">
-      <div class="nav-center">
-        <div class="nav-header">
-          <a href="index.html" class="nav-logo">
-            <img src="./static/images/cookoutbrown.png" alt="cookout" />
-          </a>
-          <button class="nav-btn btn">
-            <i class="fas fa-align-justify"></i>
-          </button>
-        </div>
-        <div class="nav-links">
-          <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
-          <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
-          <a href= "{{ url_for('views.user_recipes') }}" class="nav-link">  My recipes </a>
-          <a href= "{{ url_for('views.recipe') }}" class="nav-link">  New recipe </a>
-
-          <div class="nav-link contact-link">
-            <a href= "{{url_for('auth.signup') }}" class="btn"> Join Us </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for ('static', filename='css/index.css')}}" />
     <!-- end of nav -->
     <!-- main -->
     <main class="page">
@@ -51,14 +14,4 @@
         </div>
       </header>
     </main>
-    <!-- end of main -->
-    <!-- footer -->
-    <footer class="page-footer">
-      <p>
-        &copy; <span id="date"></span>
-        <span class="footer-logo">Cookout</span> Built by
-        <a href=https://github.com/Linda-Njau>Linda Njau</a>
-      </p>
-    </footer>
-  </body>
-</html>
+    {% endblock %}

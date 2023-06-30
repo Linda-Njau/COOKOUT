@@ -1,48 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="{{ url_for ('static', filename='images/cookout2.png') }}" type="image/x-icon" />
-    <!-- normalize -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/recipe.css') }}" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/normalize.css') }}" />
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <!-- main css -->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css')}}" />
-  </head>
-  <body{% if recipes %}{% else %} class="no-recipes"{% endif %} >
-    <!-- nav  -->
-    <nav class="navbar">
-      <div class="nav-center">
-        <div class="nav-header">
-          <a href="index.html" class="nav-logo">
-            <img src="./static/images/cookoutbrown.png" alt="cookout" />
-          </a>
-          <button class="nav-btn btn">
-            <i class="fas fa-align-justify"></i>
-          </button>
-        </div>
-        <div class="nav-links">
-          <a href="{{ url_for('views.home') }}" class="nav-link"> home </a>
-          <a href= "{{ url_for('views.about') }}" class="nav-link"> about </a>
-          <a href= "{{ url_for('views.user_recipes') }}" class="nav-link">  My recipes </a>
-          <a href= "{{ url_for('views.recipe') }}" class="nav-link">  New recipe </a>
-
-          <div class="nav-link contact-link">
-            <a href="{{ url_for('auth.logout') }}"class="btn"> logout </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+{% extends "base.html" %}
+{% block title %}
+  My Recipes
+{% endblock %}
+{% block nav_buttons %}
+<a href="{{ url_for('auth.logout') }}" class="btn"> Logout </a>
+{% endblock %}
+{% block content %}
     <main class="page">
       {% with messages = get_flashed_messages(with_categories=true) %} {% if
         messages %} {% for category, message in messages %} {% if category ==
@@ -109,5 +72,4 @@
         }
       }
     </script>
-  </body>
-  </html>
+    {% endblock %}

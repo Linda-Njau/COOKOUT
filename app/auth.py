@@ -16,7 +16,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('logged in successfully, welcome back!', category = 'success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.recipe'))
+                return redirect(url_for('views.new_recipe'))
             else:
                 flash('incorrect password, try again.', category = 'error')
         else:
@@ -55,6 +55,6 @@ def signup():
             db.session.commit()
             login_user(new_user, remember=True)
             flash('Account created. Welcome to cookout!', category='success')
-            return redirect(url_for('views.recipe'))  
+            return redirect(url_for('views.new_recipe'))  
             
     return render_template("sign_up.html", user=current_user)

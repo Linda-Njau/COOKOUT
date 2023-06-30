@@ -23,9 +23,9 @@ def user(username):
     recipes = Recipe.query.filter_by(user_id=user.id).all()
     return render_template('user.html', user=user, recipes=recipes)
 
-@views.route('/recipe', methods=['GET', 'POST'])
+@views.route('/new_recipe', methods=['GET', 'POST'])
 @login_required
-def recipe():
+def new_recipe():
     """returns recipe creation page"""
     if request.method == 'POST':
         title = request.form.get('title')
@@ -56,14 +56,14 @@ def recipe():
             db.session.add(new_recipe)
             db.session.commit()
             flash('Your recipe is added!', category='success')
-    return render_template("recipe.html", user=current_user)
+    return render_template("new_recipe.html", user=current_user)
 
-@views.route('/user_recipes')
+@views.route('/my_recipes')
 @login_required
-def user_recipes():
+def my_recipes():
     if current_user.is_authenticated:
         recipes = Recipe.query.filter_by(user_id=current_user.id).all()
-        return render_template('user_recipes.html', recipes=recipes)
+        return render_template('my_recipes.html', recipes=recipes)
     else:
         return redirect(url_for('auth.signup'))
 
