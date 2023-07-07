@@ -1,5 +1,40 @@
-# COOKOUT
-A web app for food lovers to create and share their favourite recipes
+# COOKOUT ~ *Welcome to Cookout*
 
-## Author
-[Linda Njau](https://github.com/Linda-Njau)
+![Logo](https://github.com/Linda-Njau/COOKOUT/blob/master/app/static/images/cookoutbrown.png)
+
+# Inspiration for Cookout
+Imagine hosting your friends for dinner, and they're all dying to know the secret behind that mouthwatering salad you whipped up.
+ Cookout is the answer. Not only can you impress your guests, but you can also create, discover, 
+ and share your favorite recipes with food enthusiasts from around the world. It's time to unlock 
+ the potential of your kitchen and embark on a culinary adventure!
+
+Cookout is more than just a recipe app; it's a social network for those obsessed with food. Create a profile and
+ connect with fellow foodies who share your passion. From aspiring home cooks to seasoned chefs, 
+ Cookout welcomes all skill levels. Whether you're a beginner looking to expand your repertoire or
+  a culinary expert eager to showcase your culinary masterpieces, Cookout has you covered
+so without further ado, Welcome to Cookout!
+
+![Cookout landing page](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout_screenshots/home_page.png)
+
+
+## Getting started
+
+To contribute to this project, follow these steps:
+
+### Cloning the Repository
+ Clone the repository by running the following command in your terminal or command prompt:
+   ```shell
+   git clone [git@github.com:Linda-Njau/COOKOUT.git]
+
+
+### Installing dependencies
+Before running the app, make sure you have the required dependencies installed. You can install them using pip:
+  ```shell
+  pip install -r requirements.txt
+
+### Starting the App
+To start the app, run the following command:
+  ```shell
+  python3 main.py
+
+  And with that, you can start contributing!
