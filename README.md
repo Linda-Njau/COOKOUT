@@ -48,3 +48,13 @@ For enhanced user engagement, Cookout strategically places `Join Us` buttons on 
 ## Tech Stack
 Cookout is primarily built using Flask, a lightweight and versatile web framework in Python. The application leverages Flask extensions such as Flask-Login for authentication, Flask-Migrate for seamless database migrations, and Flask-SQLAlchemy for efficient database management. The vibrant and visually appealing frontend of Cookout is achieved through Flask's render-templates, enabling the dynamic generation of HTML pages with colorful and engaging visual elements. Together, this tech stack empowers Cookout to deliver a seamless user experience, robust authentication, efficient database management, and a visually captivating frontend
 ![tech stack](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout_screenshots/tech%20stack.jpg)
+
+## Features
+### Authentication
+Cookout incorporates user authentication with dedicated login and signup pages, ensuring a secure and personalized experience. The authentication process is powered by Flask-Login, a robust Flask extension that simplifies user session management and securely verifies user credentials. With Flask-Login, Cookout securely authenticates users and grants access to features like the `New Recipe` and `My Recipes` pages, where users can create and manage their personalized recipe content. This integration guarantees a seamless and secure experience throughout the Cookout application.
+
+![login page]()
+
+![signup page](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout_screenshots/login_page.png)
+
+
