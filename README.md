@@ -44,4 +44,7 @@ To start the app, run the following command:
 Cookout features a user-friendly and intuitive layout, allowing users to effortlessly access all pages from any other page. Whether you're on the Landing page, About page, or browsing recipes, seamless navigation ensures a smooth browsing experience.
 
 For enhanced user engagement, Cookout strategically places `Join Us` buttons on pages that can be accessed without logging in. These buttons serve as prompts, inviting users to become part of the community and enjoy the full benefits of Cookout. Once logged in, users gain access to additional features such as the `New Recipe` and `My Recipe` pages, enabling them to contribute and explore personalized recipe content. 
-![user flow](
+![user flowchart](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout_screenshots/user%20journey%20flow%20chart.png)
+## Tech Stack
+Cookout is primarily built using Flask, a lightweight and versatile web framework in Python. The application leverages Flask extensions such as Flask-Login for authentication, Flask-Migrate for seamless database migrations, and Flask-SQLAlchemy for efficient database management. The vibrant and visually appealing frontend of Cookout is achieved through Flask's render-templates, enabling the dynamic generation of HTML pages with colorful and engaging visual elements. Together, this tech stack empowers Cookout to deliver a seamless user experience, robust authentication, efficient database management, and a visually captivating frontend
+![tech stack](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout_screenshots/tech%20stack.jpg)
