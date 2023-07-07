@@ -1,5 +1,21 @@
 # WELCOME TO COOKOUT!
 
+## Table of Content
+- [Inspiration for Cookout](Inspiration for Cookout)
+- [Getting Started](Getting started)
+ - [Cloning the Repository](Cloning the Repository)
+ - [Installing dependencies](Installing dependencies)
+ - [Starting the App](Starting the App)
+- [Layout](Layout)
+- [Tech Stack](Tech Stack)
+- [Features](Features)
+ - [Authentication](Authentication)
+ - [Recipe Creation](Recipe Creation)
+ - [Recipe Viewing](Recipe Viewing)
+- [Known Bugs](Known Bugs)
+- [Future Features](Future Features)
+- [Author](Author)
+
 ## Inspiration for Cookout
 Imagine hosting your friends for dinner, and they're all dying to know the secret behind that mouthwatering salad you whipped up.
  Cookout is the answer. Not only can you impress your guests, but you can also create, discover, 
@@ -53,8 +69,29 @@ Cookout is primarily built using Flask, a lightweight and versatile web framewor
 ### Authentication
 Cookout incorporates user authentication with dedicated login and signup pages, ensuring a secure and personalized experience. The authentication process is powered by Flask-Login, a robust Flask extension that simplifies user session management and securely verifies user credentials. With Flask-Login, Cookout securely authenticates users and grants access to features like the `New Recipe` and `My Recipes` pages, where users can create and manage their personalized recipe content. This integration guarantees a seamless and secure experience throughout the Cookout application.
 
-![login page]()
+![login page](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout%20images/login_page.png)
 
 ![signup page](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout_screenshots/login_page.png)
 
+### Recipe Creation
+Cookout provides a user-friendly interface for recipe creation. Within the application, users can access a straightforward form to input the details of their recipes. Upon submission, the form data is sent to the designated API endpoint, initiating the necessary database operations. Cookout's Flask backend efficiently processes the data, allowing for the seamless creation and storage of new recipes.
 
+![recipe insp](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout%20images/newrecipe_inspo_page.png)
+![recipe form](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout%20images/newrecipe_form_page.png)
+
+### Recipe Viewing
+Cookout seamlessly retrieves and presents user-specific recipes through its user-friendly interface. Upon submitting a recipe through the form, the data is securely stored in the database. Leveraging user session management, Cookout efficiently retrieves the relevant recipes associated with the authenticated user. By dynamically rendering the retrieved data within the "My Recipes" section, users can conveniently view and manage their personalized collection of culinary creations. This technical integration ensures a smooth and personalized recipe viewing experience within the Cookout application.
+![my recipes](https://github.com/Linda-Njau/COOKOUT/blob/master/cookout%20images/myrecipes_page.png)
+
+## Known Bugs
+One known bug in Cookout relates to the delay in displaying flash messages, which can result in messages being shown later than intended. Occasionally, these delayed flash messages may appear after the relevant context or action has passed
+
+## Future Features
+- [ ] recipe-sharing capabilities
+- [ ] user-profiles and follow/follower feature
+- [ ] tag-based discussion forums
+- [ ] hidden/private recipes
+- [ ] collection feature for recipes
+
+## Author
+* fellow foodie: [**Linda Njau**](https://github.com/Linda-Njau)
