@@ -39,3 +39,9 @@ To start the app, run the following command:
   python3 main.py
    ```
   And with that, you can start contributing!
+
+  ## Layout
+Cookout features a user-friendly and intuitive layout, allowing users to effortlessly access all pages from any other page. Whether you're on the Landing page, About page, or browsing recipes, seamless navigation ensures a smooth browsing experience.
+
+For enhanced user engagement, Cookout strategically places `Join Us` buttons on pages that can be accessed without logging in. These buttons serve as prompts, inviting users to become part of the community and enjoy the full benefits of Cookout. Once logged in, users gain access to additional features such as the `New Recipe` and `My Recipe` pages, enabling them to contribute and explore personalized recipe content. 
+![user flow](
