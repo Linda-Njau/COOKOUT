@@ -1,20 +1,20 @@
 # WELCOME TO COOKOUT!
 
-## Table of Content
-- [Inspiration for Cookout](Inspiration for Cookout)
-- [Getting Started](Getting started)
- - [Cloning the Repository](Cloning the Repository)
- - [Installing dependencies](Installing dependencies)
- - [Starting the App](Starting the App)
-- [Layout](Layout)
-- [Tech Stack](Tech Stack)
-- [Features](Features)
- - [Authentication](Authentication)
- - [Recipe Creation](Recipe Creation)
- - [Recipe Viewing](Recipe Viewing)
-- [Known Bugs](Known Bugs)
-- [Future Features](Future Features)
-- [Author](Author)
+## Table of Contents
+- [Inspiration for Cookout](#inspiration-for-cookout)
+- [Getting Started](#getting-started)
+  - [Cloning the Repository](#cloning-the-repository)
+  - [Installing Dependencies](#installing-dependencies)
+  - [Starting the App](#starting-the-app)
+- [Layout](#layout)
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+  - [Authentication](#authentication)
+  - [Recipe Creation](#recipe-creation)
+  - [Recipe Viewing](#recipe-viewing)
+- [Known Bugs](#known-bugs)
+- [Future Features](#future-features)
+- [Author](#author)
 
 ## Inspiration for Cookout
 Imagine hosting your friends for dinner, and they're all dying to know the secret behind that mouthwatering salad you whipped up.
